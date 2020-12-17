@@ -1,12 +1,36 @@
 {
   "compilerOptions": {
-    "allowSyntheticDefaultImports": true,
-    "jsx": "react-native",
-    "lib": ["dom", "esnext"],
+    "baseUrl": "./",
+    "outDir": "./dist/tsc-out",
+    "target": "esnext",
     "moduleResolution": "node",
-    "noEmit": true,
-    "skipLibCheck": true,
+    "jsx": "react",
+    "experimentalDecorators": true,
+    "lib": [
+      "es6",
+      "dom"
+    ],
+    "sourceMap": true,
     "resolveJsonModule": true,
-    "strict": true
-  }
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
+    "typeRoots": [
+      "./node_modules/@types"
+    ],
+    "paths": {
+      "@ui-kitten/components/*": ["../react-native-ui-kitten/src/components/*"],
+      "@ui-kitten/components": ["../react-native-ui-kitten/src/components"],
+      "@ui-kitten/date-fns": ["../react-native-ui-kitten/src/date-fns"],
+      "@ui-kitten/eva-icons": ["../react-native-ui-kitten/src/eva-icons"],
+      "@ui-kitten/moment": ["../react-native-ui-kitten/src/moment"]
+      //      "@polkadot/apps-config": [ "packages/apps-config/src" ],
+      //      "@polkadot/apps-config/*": [ "packages/apps-config/src/*" ]
+    }
+  },
+  "exclude": [
+    "./node_modules",
+    "./babel.config.js",
+    "./metro.config.js"
+  ]
 }
